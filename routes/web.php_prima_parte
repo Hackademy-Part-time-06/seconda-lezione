@@ -1,0 +1,88 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('/', function () {
+    $frase = "Sono in Homepage";
+    $frase2 = "Sono un sottotitolo";
+
+    $data =  [
+        'elemento' => $frase,
+        'elemento2' => $frase2
+    ];
+
+    return view('welcome', $data);
+    //return view('welcome', ['elemento' => $frase]);
+});
+
+Route::get('/elementi', function () {
+
+    $elementi = [
+        'Gennaio', 'Maggio', 'Dicembre', 'Carlo', 'Aprile'
+    ];
+
+    //return view('mesi',  $elementi);
+    return view('mesi', ['mesi' => $elementi]);
+});
+
+
+
+Route::get('/contatti/{nome}', function ($name) {
+    //resources/views/
+    //contact
+    //.blade.php
+
+    $testo = "Siamo in Contatti";
+    return view('contact', ['primo' => $testo, 'nome' => $name]);
+});
+
+//vecchio metodo
+// $nome = 'Francesco';
+// function saluta($nome)
+// {
+//     return "Ciao, $nome";
+// }
+// saluta($nome);
+
+//Nuovo
+
+//$stringa = '/saluta/{nome}';
+//$stringa1 = '/saluta/';
+//$stringa2 = $nome;
+// Route::get('/saluta/statico', function () {
+//     return "Ciao, Statico";
+// });
+
+
+// $stringa = '/saluta/{nome}';
+// $stringa1 = '/saluta/';
+// $stringa2 = $nome;
+
+
+//http://127.0.0.1:8000/profilo/marco/ciccio
+//http://127.0.0.1:8000/profilo/{username}/{email}
+//http://127.0.0.1:8000/admino/utente=32783487534
+// Route::get('/profilo/{username}/{email}', function ($name, $email) {
+
+//     $stringa = "Ciao, $name. La mia email è $email";
+//     return $stringa;
+// });
+
+
+
+
+// Route::get('/calcola/{numero1}/{numero2}', function ($n1, $n2) {
+//     $somma = $n1 + $n2;
+//     return $somma;
+// });
