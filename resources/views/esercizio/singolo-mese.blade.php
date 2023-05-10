@@ -21,10 +21,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="/">Homepage</a>
+            <a class="nav-link active" aria-current="page" href="/">Homepage</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/chi-siamo">Chi Siamo</a>
+            <a class="nav-link" href="/chi-siamo">Chi Siamo</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/contatti">Contatti</a>
@@ -32,23 +32,19 @@
 
 
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+
       </div>
     </div>
   </nav>
-  @foreach($elementi as $elemento)
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{$elemento['image']}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{$elemento['name']}}</h5>
-      <a href="{{route('detail',['ref' =>$elemento['name']])}}" class="btn btn-primary">Vai alla meta</a>
+  <div class="container">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{$month['image']}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{$month['name']}}</h5>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
     </div>
   </div>
-  @endforeach
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">

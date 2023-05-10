@@ -25,15 +25,17 @@
     } --}}
     <ul>
         @foreach($mesi as $mese)
-        @if($mese != 'Carlo')
-        <li>{{$mese}}</li>
-        @else
-        Errore
-        @endif
+        <li>
+            <a href="{{route('detail',['ref' =>$mese['name']])}}">
+
+                {{-- <a href="/singolo-mese/{{$mese['name']}}"> --}}
+                {{$mese['name']}}
+            </a>
+        </li>
         @endforeach
-
-
     </ul>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>

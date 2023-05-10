@@ -21,13 +21,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="/">Homepage</a>
+            <a class="nav-link " aria-current="page" href="{{ route('homepage')}}">Homepage</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/chi-siamo">Chi Siamo</a>
+            <a class="nav-link" href="{{route('about')}}">Chi Siamo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/contatti">Contatti</a>
+            <a class="nav-link active" href="{{route('contact')}}">Contatti</a>
           </li>
 
 
